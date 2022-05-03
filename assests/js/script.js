@@ -12,3 +12,11 @@ function bt_cancelar(){
     cancela('#box_ano');
     cancela('#box_preco');
 }
+
+function deletar(id){
+    console.log('Deletar ', id);
+}
+
+function editar(id) {
+    console.log('Editar ', id);
+}

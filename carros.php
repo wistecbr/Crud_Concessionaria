@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assests/css/reset.css">
     <link rel="stylesheet" href="./assests/css/stilos.css">
+    <script src="./assests/js/script.js" defer></script>
     <title>Lista de Carros</title>
 </head>
 <body>
@@ -31,6 +32,7 @@
                 <th class="cor_nao">Marca</th>
                 <th class="cor_sim">Ano</th>
                 <th class="cor_nao">Preço</th>
+                <th class="cor_sim">Opções</th>
             </tr>
             <?php
                 for($i = 0; $i < count($carros); $i++){
@@ -43,6 +45,10 @@
                         echo '<td>'. $carros[$i]['marca'] .'</td>';
                         echo '<td>'. $carros[$i]['ano'] .'</td>';
                         echo '<td>'. $carros[$i]['preco'] .'</td>';
+                        echo '<td>
+                            <button onclick="deletar('.$i.')">Deletar</button>
+                            <button onclick="editar('.$i.')">Editar</button>
+                        </td>';
                     echo '</tr>';
                 }
             ?>              

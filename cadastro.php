@@ -21,7 +21,7 @@
         </ul>
     </header>
     <main>
-        <form action="valida.php" method="post">
+        <form action="./lib/valida.php" method="post">
             <p>
                 <label> Modelo: </label>
                 <input name="modelo" type="text" id="box_modelo">
