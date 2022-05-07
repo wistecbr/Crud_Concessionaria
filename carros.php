@@ -1,7 +1,6 @@
 <?php
-    include './lib/lista.php';
-    $carros = exportaLista();
-    //var_dump($carros)
+    include './lib/mysql.php';
+    $carros = listarCarros();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,10 +43,10 @@
                         echo '<td>'. $carros[$i]['modelo'] .'</td>';
                         echo '<td>'. $carros[$i]['marca'] .'</td>';
                         echo '<td>'. $carros[$i]['ano'] .'</td>';
-                        echo '<td>'. $carros[$i]['preco'] .'</td>';
+                        echo '<td> R$ '. $carros[$i]['preco'] .'</td>';
                         echo '<td>
-                            <button onclick="deletar('.$i.')">Deletar</button>
-                            <button onclick="editar('.$i.')">Editar</button>
+                            <button onclick="deletar('.$carros[$i]['id'].')">Deletar</button>
+                            <button onclick="editar('.$carros[$i]['id'].')">Editar</button>
                         </td>';
                     echo '</tr>';
                 }
