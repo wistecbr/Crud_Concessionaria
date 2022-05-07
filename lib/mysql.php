@@ -35,4 +35,14 @@
         }
         return $lista;
     }
+
+    function cadastraCarro($modelo, $marca, $ano, $preco){
+        $query = "insert into carros (modelo, marca, ano, preco) 
+        values('" . $modelo . "','" . $marca . "'," . $ano . "," . $preco .");";
+        $link = conecta();
+        if($link !== NULL){
+            $result = mysqli_query($link, $query);
+        }
+    }
+
 ?>
