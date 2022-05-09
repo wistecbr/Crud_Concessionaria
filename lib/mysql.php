@@ -37,11 +37,14 @@
     }
 
     function cadastraCarro($modelo, $marca, $ano, $preco){
-        $query = "insert into carros (modelo, marca, ano, preco) 
+        $query = "INSERT INTO carros (modelo, marca, ano, preco)  
         values('" . $modelo . "','" . $marca . "'," . $ano . "," . $preco .");";
         $link = conecta();
         if($link !== NULL){
             $result = mysqli_query($link, $query);
+            return $result;
+        }else {
+            return NULL;
         }
     }
 
