@@ -48,4 +48,8 @@
         }
     }
 
+    function removerCarro($id){
+        
+    }
+
 ?>

@@ -29,7 +29,18 @@
 
             <p>
                 <label> Marca: </label>
-                <input name="marca" type="text" id="box_marca">
+                <select id="box_marca" name="marca">
+                    <option value="VOLKSWAGEM">VOLKSWAGEM</option>
+                    <option value="CHEVROLET">CHEVROLET</option>
+                    <option value="FIAT">FIAT</option>
+                    <option value="JEEP">JEEP</option>
+                    <option value="RENAULT">RENAULT</option>
+                    <option value="PEGOUT">PEGOUT</option>
+                    <option value="HYUNDAI">HYUNDAI</option>
+                    <option value="TOYOTA">TOYOTA</option>
+                    <option value="HONDA">HONDA</option>
+                    <option value="OUTROS">OUTROS</option>
+                </select>
             </p>
 
             <p>

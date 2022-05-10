@@ -1,10 +1,11 @@
 <?php
     include './mysql.php';
+    include './newMethod.php';
     //var_dump($_POST);
     if(isset($_POST) && isset($_POST['modelo']) && isset($_POST['marca'])
         && isset($_POST['ano']) && isset($_POST['preco'])){
         // variaveis irão receber os valores vindos da requisição post do formulário
-        $modelo = $_POST['modelo'];
+        $modelo = strtoupper($_POST['modelo']); // colocar em letra maúscula https://www.php.net/manual/pt_BR/function.strtoupper.php
         $marca = $_POST['marca'];
         $ano = (INT) $_POST['ano'];
         $preco = (FLOAT) $_POST['preco'];
@@ -19,8 +20,7 @@
             // sucesso redirecionar para a lista.
             header('Location: ../carros.php'); 
         }
+    } 
 
-    } else {
-        header('Location: ../cadastro.php?erro=1');
-    }
+    var_dump($_DELETE);
 ?>

@@ -14,7 +14,8 @@ function bt_cancelar(){
 }
 
 function deletar(id){
-    console.log('Deletar ', id);
+    alert('Deletar ', id);
+    window.location.assign('../lib/remover.php?id='+id);
 }
 
 function editar(id) {
