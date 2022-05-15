@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assests/css/reset.css">
-    <link rel="stylesheet" href="./assests/css/stilos.css">
+    <link rel="stylesheet" href="./assests/css/stilo.css">
     <script src="./assests/js/scripts.js" defer></script>
     <title>Lista de Carros</title>
 </head>
@@ -40,10 +40,16 @@
                     }else {
                         echo '<tr>';
                     }
+                    $img = $carros[$i]['img'];
+                    if($img === NULL){
+                        $img = './assests/img/car.jpg';
+                    }
                         echo '<td>'. $carros[$i]['modelo'] .'</td>';
                         echo '<td>'. $carros[$i]['marca'] .'</td>';
                         echo '<td>'. $carros[$i]['ano'] .'</td>';
                         echo '<td> R$ '. $carros[$i]['preco'] .'</td>';
+                        echo '<td> <img class="imgCar" src="'. $img ;
+                        echo '" alt="'.$carros[$i]['modelo'].'">' .'</td>';
                         echo '<td>
                             <button onclick="deletar('.$carros[$i]['id'].')">Deletar</button>
                             <button onclick="editar('.$carros[$i]['id'].')">Editar</button>

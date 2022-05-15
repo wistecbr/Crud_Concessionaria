@@ -1,6 +1,5 @@
 <?php
     include './mysql.php';
-    include './newMethod.php';
     //var_dump($_POST);
     if(isset($_POST) && isset($_POST['modelo']) && isset($_POST['marca'])
         && isset($_POST['ano']) && isset($_POST['preco'])){
@@ -9,18 +8,32 @@
         $marca = $_POST['marca'];
         $ano = (INT) $_POST['ano'];
         $preco = (FLOAT) $_POST['preco'];
+        $img = $_FILES["imagem"];
+        $mysqlImg = NULL;
+        var_dump($img);
+        if($img){
+            $nome = $img['name'];
+            $local = '../assests/img/'.$nome;
+            $localImg = './assests/img/'.$nome;
+            if(move_uploaded_file($img['tmp_name'],$local)){
+                $mysqlImg = $localImg;
+            }
+        }
         // as variavéis são passadas como paramentro para função de cadastro no
         // banco de dados 
-        $resposta = cadastraCarro($modelo, $marca, $ano, $preco);
+        $resposta = cadastraCarro($modelo, $marca, $ano, $preco, $mysqlImg);
         // se a resposta for TRUE sinal que foi cadastrado com sucesso.
         // caso contrário redireciona para página de cadastro novamente.
-        if($resposta === NULL || $resposta === false){
-            header('Location: ../cadastro.php?erro=1');  
+        //*
+        if($resposta === NULL){
+            header('Location: ../cadastro.php?erro=connection');  
+        }else if($resposta === false){
+            header('Location: ../cadastro.php?erro=query');
         }else {
             // sucesso redirecionar para a lista.
             header('Location: ../carros.php'); 
         }
+        //*/
     } 
 
-    var_dump($_DELETE);
 ?>

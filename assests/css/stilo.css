@@ -53,3 +53,9 @@ form p {
     margin-top: 15px;
 }
 
+.imgCar{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+

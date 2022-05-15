@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assests/css/reset.css">
-    <link rel="stylesheet" href="./assests/css/stilos.css">
+    <link rel="stylesheet" href="./assests/css/stilo.css">
     <script src="./assests/js/script.js" defer></script>
     <title>Cadastrar Carro</title>
 </head>
+
 <body>
     <header>
         <figure>
@@ -21,7 +23,7 @@
         </ul>
     </header>
     <main>
-        <form action="./lib/valida.php" method="post">
+        <form action="./lib/valida.php" method="post" enctype="multipart/form-data">
             <p>
                 <label> Modelo: </label>
                 <input name="modelo" type="text" id="box_modelo">
@@ -45,12 +47,16 @@
 
             <p>
                 <label> Ano: </label>
-                <input name="ano" type="number"  id="box_ano">
+                <input name="ano" type="number" id="box_ano">
             </p>
 
             <p>
                 <label> Preço: </label>
                 <input name="preco" type="number" id="box_preco">
+            </p>
+            <p>
+                <label> Imagem: </label>
+                <input name="imagem" type="file" id="box_img">
             </p>
 
             <p>
@@ -65,4 +71,5 @@
 
     </footer>
 </body>
+
 </html>
