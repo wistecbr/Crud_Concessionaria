@@ -13,9 +13,9 @@
         var_dump($img);
         if($img){
             $nome = $img['name'];
-            $local = '../assests/img/'.$nome;
-            $localImg = './assests/img/'.$nome;
-            if(move_uploaded_file($img['tmp_name'],$local)){
+            $local = '../assests/img/'.$nome; // local que a img será movida
+            $localImg = './assests/img/'.$nome; // info do end que a img estará salva
+            if(move_uploaded_file($img['tmp_name'], $local)){
                 $mysqlImg = $localImg;
             }
         }
