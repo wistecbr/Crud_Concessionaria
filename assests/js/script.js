@@ -13,11 +13,16 @@ function bt_cancelar(){
     cancela('#box_preco');
 }
 
-function deletar(id){
-    alert('Deletar ', id);
-    window.location.assign('../lib/remover.php?id='+id);
+function bt_cancelar_up(){
+    window.location.assign('./carros.php');
+}
+
+function deletar(id){   
+    console.log('remover ', id);
+    window.location.assign('./lib/valida.php?remover=' + id)
 }
 
 function editar(id) {
     console.log('Editar ', id);
+    window.location.assign('./lib/valida.php?editar=' + id)
 }

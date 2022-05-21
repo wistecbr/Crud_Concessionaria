@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assests/css/reset.css">
     <link rel="stylesheet" href="./assests/css/stilo.css">
-    <script src="./assests/js/scripts.js" defer></script>
+    <script src="./assests/js/script.js" defer></script>
     <title>Lista de Carros</title>
 </head>
 <body>
@@ -41,7 +41,7 @@
                         echo '<tr>';
                     }
                     $img = $carros[$i]['img'];
-                    if($img === NULL){
+                    if($img === NULL || $img === ''){
                         $img = './assests/img/car.jpg';
                     }
                         echo '<td>'. $carros[$i]['modelo'] .'</td>';
