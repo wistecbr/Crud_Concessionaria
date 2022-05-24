@@ -1,10 +1,21 @@
 <?php
+    require __DIR__ . '/../vendor/autoload.php';
+
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    $dotenv->load();    
+
+    $host = $_ENV['HOST'];
+    $user = $_ENV['USER'];
+    $password = $_ENV['PASSWORD']; 
+    $database = $_ENV['DATABASE'];
+
+   // echo 'Host: ' . $host . ' user: '. $user . ' password: '. $password . ' database: '. $database;
 
     function conecta() {
-        $host = 'localhost';
-        $user = 'root';
-        $password = '';
-        $database = 'concessionaria';
+        $host = $GLOBALS['host'];
+        $user = $GLOBALS['user'];
+        $password =$GLOBALS['password'] ;
+        $database = $GLOBALS['database'];
         $mysqli = mysqli_connect($host, $user, $password, $database);
 
         if (mysqli_connect_errno()) {
